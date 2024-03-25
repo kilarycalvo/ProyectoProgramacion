@@ -1,0 +1,37 @@
+class Paquete:
+    def __init__(self):
+        self.estado = "Creado"
+
+    def recolectar(self):
+        if self.estado == "Creado":
+            self.estado = "Recolectado"
+            print("El paquete ha sido recolectado.")
+        else:
+            print("El paquete no puede ser recolectado en este estado.")
+
+    def entregar(self):
+        if self.estado == "Recolectado":
+            self.estado = "Entregado"
+            print("El paquete ha sido entregado con éxito.")
+        else:
+            print("El paquete no puede ser entregado en este estado.")
+
+    def entrega_fallida(self):
+        if self.estado == "Recolectado":
+            self.estado = "Entrega Fallida"
+            print("La entrega del paquete ha fallado.")
+        else:
+            print("El paquete no puede tener una entrega fallida en este estado.")
+
+# Ejemplo de uso
+mi_paquete = Paquete()
+print("Estado actual del paquete:", mi_paquete.estado)
+
+mi_paquete.recolectar()
+print("Estado actual del paquete:", mi_paquete.estado)
+
+mi_paquete.entrega_fallida()
+print("Estado actual del paquete:", mi_paquete.estado)
+
+mi_paquete.entregar()
+print("Estado actual del paquete:", mi_paquete.estado)
